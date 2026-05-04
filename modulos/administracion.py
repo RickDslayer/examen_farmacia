@@ -22,7 +22,7 @@ def crear_registro(ID,name,addres,cellphone,ID_manager,):
 def eliminar_sucursal(ID):
     buscar = str(ID)
     if buscar in sucursales:
-        del sucursales[ID]
+        del sucursales[buscar]
 
 def editar_sucursal(ID):
     buscar = str(ID)
@@ -31,8 +31,8 @@ def editar_sucursal(ID):
         new_addres = str(input("ingrese la nueva direccion (si es el mismo vuelva a escribirlo): "))
         new_cellphone = str(input("ingrese el nuevo telefono (si es el mismo vuelva a escribirlo): "))
         new_IDmanager = str(input("ingrese la nueva ID del gerente o responsable (si es el mismo vuelva a escribirlo): "))
-        new_sucursal = sucursales[ID] = {"nombre":new_name,"direccion":new_addres,"telefono":new_cellphone,"ID_gerente":new_IDmanager}
-        guardar(new_sucursal)
+        sucursales[ID] = {"nombre":new_name,"direccion":new_addres,"telefono":new_cellphone,"ID_gerente":new_IDmanager}
+        guardar(sucursales)
         print(f"la sucursal {new_name} fue editada exitosamente")
     else:
         print(f"no existe la sucursal con el ID: {ID}")
