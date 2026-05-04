@@ -40,3 +40,15 @@ def editar_sucursal(ID):
         print(f"la sucursal {new_name} fue editada exitosamente")
     else:
         print(f"no existe la sucursal con el ID: {ID}")
+
+def buscar_sucursales(name):
+    buscar = str(name)
+    for ID,datos in sucursales.items():
+        if datos["nombre"] == buscar:
+            print(f"ID: {ID}")
+            print(f"Nombre: {datos['nombre']}")
+            print(f"Dirección: {datos['direccion']}")
+            print(f"Teléfono: {datos['telefono']}")
+            print(f"ID Gerente: {datos['ID_gerente']}")
+        else:
+            print("no existe una sucursal con ese nombre")
