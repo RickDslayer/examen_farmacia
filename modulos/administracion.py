@@ -23,6 +23,10 @@ def eliminar_sucursal(ID):
     buscar = str(ID)
     if buscar in sucursales:
         del sucursales[buscar]
+        guardar(sucursales)
+        print(f"sucursal con ID: {ID} eliminada correctamente")
+    else:
+        print(f"no existe la sucursal con el ID: {ID}")
 
 def editar_sucursal(ID):
     buscar = str(ID)
